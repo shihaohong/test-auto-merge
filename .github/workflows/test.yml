@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
     steps:
       # Set up Flutter.
       - name: Clone Flutter repository with stable channel
@@ -26,8 +26,5 @@ jobs:
       - run: flutter pub get
 
       # Analyze, check formatting, and run unit tests.
-      - run: flutter analyze
-      - name: Ensure the Dart code is formatted correctly
-        run: flutter format --set-exit-if-changed --dry-run .
       - name: Run Flutter unit tests
         run: flutter test
