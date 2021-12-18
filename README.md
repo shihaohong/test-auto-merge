@@ -1,3 +1,1 @@
 # test-auto-merge
-
-two
